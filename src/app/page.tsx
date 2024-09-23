@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
+import Image from "next/image";
 
 function SocialLink({ href, children }: PropsWithChildren<{ href: string }>) {
   return (
@@ -24,10 +25,13 @@ function Me({ className }: { className?: string }) {
       <CardContent className="p-0 cursor-auto">
         <div className="flex items-center p-4 gap-x-4">
           <div className="flex-shrink-0">
-            <img
-              alt=""
+            <Image
+              alt="Profile picture"
               src={"/profile.png"}
-              className="h-10 w-10 rounded-full"
+              height={40}
+              width={40}
+              className="rounded-full"
+              priority={true}
             />
           </div>
           <div className="min-w-0 flex-1">
