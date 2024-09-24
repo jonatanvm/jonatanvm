@@ -8,6 +8,7 @@ import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Image from "next/image";
+import { MailIcon } from "lucide-react";
 
 function SocialLink({ href, children }: PropsWithChildren<{ href: string }>) {
   return (
@@ -67,6 +68,11 @@ export default function Home() {
             <li>
               <SocialLink href={"https://x.com/_jonatanvm"}>
                 <TwitterIcon className="h-5 w-5" aria-label={"X.com"} />
+              </SocialLink>
+            </li>
+            <li>
+              <SocialLink href={"mailto:Jonatan <stepped_jays.0m@icloud.com>"}>
+                <MailIcon className="h-5 w-5" aria-label={"X.com"} />
               </SocialLink>
             </li>
           </ul>
