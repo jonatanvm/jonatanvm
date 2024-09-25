@@ -56,107 +56,139 @@ function Me({ className }: { className?: string }) {
   );
 }
 
+function SocialLinks({ className }: { className?: string }) {
+  return (
+    <ul className={cn("grid grid-cols-4 sm:grid-cols-4 gap-3", className)}>
+      <li className={"w-full"}>
+        <SocialLink href={"https://www.linkedin.com/in/jonatanvm/"}>
+          <LinkedInIcon className="h-5 w-5 shrink-0" aria-label="LinkedIn" />
+        </SocialLink>
+      </li>
+      <li>
+        <SocialLink href={"https://github.com/jonatanvm"}>
+          <GithubIcon className="h-5 w-5 shrink-0" aria-label={"Github"} />
+        </SocialLink>
+      </li>
+      <li>
+        <SocialLink href={"https://x.com/_jonatanvm"}>
+          <TwitterIcon className="h-5 w-5 shrink-0" aria-label={"X.com"} />
+        </SocialLink>
+      </li>
+      <li>
+        <SocialLink href={"mailto:Jonatan <stepped_jays.0m@icloud.com>"}>
+          <MailIcon className="h-5 w-5 shrink-0" aria-label={"X.com"} />
+        </SocialLink>
+      </li>
+    </ul>
+  );
+}
+
+function Experience({
+  title,
+  timeline,
+  className,
+}: {
+  title: string;
+  timeline: { title: string; subtitle: string; time: string }[];
+  className?: string;
+}) {
+  return (
+    <Card className={cn(className, "sm:max-w-sm mx-auto")}>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Timeline className={"gap-y-4 mr-auto"}>
+          {timeline.map((job) => (
+            <TimelineItem status="done" key={job.time}>
+              <TimelineHeading className={"sm:text-sm"}>
+                {job.title}
+              </TimelineHeading>
+              <TimelineDot className="size-3">
+                <CircleDot />
+              </TimelineDot>
+              <TimelineLine className={"py-1"} done />
+              <TimelineContent className={"sm:text-sm flex flex-col"}>
+                <span className={"dark:text-zinc-300 text-zinc-700"}>
+                  {job.subtitle}
+                </span>
+                <span className={"dark:text-zinc-500 text-zinc-900"}>
+                  {job.time}
+                </span>
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function Home() {
-  const jobs = [
+  const timeline = [
     {
-      employer: "Elevenlabs",
-      title: "Software Engineer",
+      title: "Elevenlabs",
+      subtitle: "Software Engineer",
       time: "Aug 2024 - Present",
     },
     {
-      employer: "Root Signals",
-      title: "Lead Software Engineer",
+      title: "Root Signals",
+      subtitle: "Lead Software Engineer",
       time: "Apr 2024 - Aug 2024",
     },
     {
-      employer: "Mobal",
-      title: "Head of Product and Technology",
+      title: "Mobal",
+      subtitle: "Head of Product and Technology",
       time: "Jul 2021 - Aug 2023",
     },
     {
-      employer: "RhombIT Consulting",
-      title: "Software Engineer",
+      title: "RhombIT Consulting",
+      subtitle: "Software Engineer",
       time: "Jun 2019 - Jul 2021",
     },
     {
-      employer: "SmartValley Wearable Oy",
-      title: "CTO",
+      title: "SmartValley Wearable Oy",
+      subtitle: "CTO",
       time: "May 2017 - Aug 2020",
     },
     {
-      employer: "jara.ai",
-      title: "Co-founder",
+      title: "jara.ai",
+      subtitle: "Co-founder",
       time: "Oct 2018 - Aug 2019",
     },
   ];
+
+  const educationTimeline = [
+    {
+      title: "Master of Science - Aalto University",
+      subtitle: "Machine Learning, Data Science and Artificial Intelligence",
+      time: "Passed with Distinction",
+    },
+    {
+      title: "Bachelor of Science - Aalto University",
+      subtitle: "Computer Science",
+      time: "",
+    },
+  ];
+
   return (
     <div className="grid items-center justify-items-center p-4 sm:p-20 pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
         <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 w-full">
           <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto">
             <Me className={"w-full"} />
-            <ul className={"grid grid-cols-4 sm:grid-cols-4 w-full gap-3"}>
-              <li className={"w-full"}>
-                <SocialLink href={"https://www.linkedin.com/in/jonatanvm/"}>
-                  <LinkedInIcon
-                    className="h-5 w-5 shrink-0"
-                    aria-label="LinkedIn"
-                  />
-                </SocialLink>
-              </li>
-              <li>
-                <SocialLink href={"https://github.com/jonatanvm"}>
-                  <GithubIcon
-                    className="h-5 w-5 shrink-0"
-                    aria-label={"Github"}
-                  />
-                </SocialLink>
-              </li>
-              <li>
-                <SocialLink href={"https://x.com/_jonatanvm"}>
-                  <TwitterIcon
-                    className="h-5 w-5 shrink-0"
-                    aria-label={"X.com"}
-                  />
-                </SocialLink>
-              </li>
-              <li>
-                <SocialLink
-                  href={"mailto:Jonatan <stepped_jays.0m@icloud.com>"}
-                >
-                  <MailIcon className="h-5 w-5 shrink-0" aria-label={"X.com"} />
-                </SocialLink>
-              </li>
-            </ul>
+            <SocialLinks className={"w-full"} />
+            <Experience
+              title={"Experience"}
+              className={"w-full"}
+              timeline={timeline}
+            />
+            <Experience
+              title={"Education"}
+              className={"w-full"}
+              timeline={educationTimeline}
+            />
           </div>
-          <Card className={"w-full sm:max-w-sm mx-auto"}>
-            <CardHeader>
-              <CardTitle>Experience</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Timeline className={"gap-y-4 mr-auto"}>
-                {jobs.map((job) => (
-                  <TimelineItem status="done" key={job.time}>
-                    <TimelineHeading className={"sm:text-sm"}>
-                      {job.employer}
-                    </TimelineHeading>
-                    <TimelineDot className="size-3">
-                      <CircleDot />
-                    </TimelineDot>
-                    <TimelineLine className={"py-1"} done />
-                    <TimelineContent className={"sm:text-sm flex flex-col"}>
-                      <span className={"dark:text-zinc-300 text-zinc-700"}>
-                        {job.title}
-                      </span>
-                      <span className={"dark:text-zinc-500 text-zinc-900"}>
-                        {job.time}
-                      </span>
-                    </TimelineContent>
-                  </TimelineItem>
-                ))}
-              </Timeline>
-            </CardContent>
-          </Card>
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-zinc-300 dark:text-zinc-800 hidden">
