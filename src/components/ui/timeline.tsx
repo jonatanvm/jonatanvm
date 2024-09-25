@@ -2,7 +2,6 @@ import React from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
-import { CheckIcon, CrossIcon, DotIcon } from "lucide-react";
 
 const timelineVariants = cva("grid", {
   variants: {
