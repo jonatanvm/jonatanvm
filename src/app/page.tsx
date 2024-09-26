@@ -17,6 +17,11 @@ import {
   TimelineItem,
   TimelineLine,
 } from "@/components/ui/timeline";
+import {
+  ClientNavigation,
+  NextItemButton,
+  PervItemButton,
+} from "@/components/client-navigation";
 
 function SocialLink({ href, children }: PropsWithChildren<{ href: string }>) {
   return (
@@ -51,6 +56,7 @@ function Me({ className }: { className?: string }) {
             <ModeToggle />
           </div>
         </div>
+        <ClientNavigation />
       </CardContent>
     </Card>
   );
@@ -172,28 +178,51 @@ export default function Home() {
   ];
 
   return (
-    <div className="grid items-center justify-items-center p-4 sm:p-20 pb-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid items-center justify-items-center p-4 pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
         <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 w-full">
           <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto">
-            <Me className={"w-full"} />
-            <SocialLinks className={"w-full"} />
-            <Experience
-              title={"Experience"}
-              className={"w-full"}
-              timeline={timeline}
-            />
-            <Experience
-              title={"Education"}
-              className={"w-full"}
-              timeline={educationTimeline}
-            />
+            <Section id={"details"}>
+              <Me className={"w-full"} />
+              <SocialLinks className={"w-full"} />
+              <NextItemButton />
+            </Section>
+            <Section id={"experience"}>
+              <PervItemButton />
+              <Experience
+                title={"Experience"}
+                className={"w-full"}
+                timeline={timeline}
+              />
+              <NextItemButton />
+            </Section>
+            <Section id={"education"}>
+              <PervItemButton />
+              <Experience
+                title={"Education"}
+                className={"w-full"}
+                timeline={educationTimeline}
+              />
+            </Section>
           </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-zinc-300 dark:text-zinc-800 hidden">
+      <footer className="row-start-3 gap-6 flex-wrap items-center justify-center text-zinc-300 dark:text-zinc-800 hidden">
         © jonatanvm.com
       </footer>
+    </div>
+  );
+}
+
+function Section({ id, children }: PropsWithChildren<{ id: string }>) {
+  return (
+    <div
+      id={id}
+      className={
+        "w-full min-h-screen justify-center gap-4 flex flex-col active-section"
+      }
+    >
+      {children}
     </div>
   );
 }
