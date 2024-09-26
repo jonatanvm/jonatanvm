@@ -219,7 +219,7 @@ function Section({ id, children }: PropsWithChildren<{ id: string }>) {
     <div
       id={id}
       className={
-        "w-full min-h-screen justify-center gap-4 flex flex-col active-section"
+        "w-full sm:min-h-screen justify-center gap-4 flex flex-col active-section"
       }
     >
       {children}

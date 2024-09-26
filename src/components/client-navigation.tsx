@@ -46,7 +46,11 @@ export function NextItemButton() {
   const { nextItem } = useScrollToSection();
 
   return (
-    <Button variant={"ghost"} onClick={() => nextItem()}>
+    <Button
+      variant={"ghost"}
+      onClick={() => nextItem()}
+      className={"hidden sm:inline-flex"}
+    >
       Next (<ArrowDownIcon className={"w-3 h-3"} />)
     </Button>
   );
@@ -56,7 +60,11 @@ export function PervItemButton() {
   const { prevItem } = useScrollToSection();
 
   return (
-    <Button variant={"ghost"} onClick={() => prevItem()}>
+    <Button
+      variant={"ghost"}
+      onClick={() => prevItem()}
+      className={"hidden sm:inline-flex"}
+    >
       Previous (<ArrowUpIcon className={"w-3 h-3"} />)
     </Button>
   );
