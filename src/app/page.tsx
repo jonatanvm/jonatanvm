@@ -70,7 +70,7 @@ function SocialLinks({ className }: { className?: string }) {
         </SocialLink>
       </li>
       <li>
-        <SocialLink href={"https://x.com/_jonatanvm"}>
+        <SocialLink href={"https://x.com/jonatanvmartens"}>
           <TwitterIcon className="h-5 w-5 shrink-0" aria-label={"X.com"} />
         </SocialLink>
       </li>
