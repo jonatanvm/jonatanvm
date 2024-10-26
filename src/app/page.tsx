@@ -17,6 +17,7 @@ import {
   TimelineItem,
   TimelineLine,
 } from "@/components/ui/timeline";
+import { headers } from "next/headers";
 
 function SocialLink({ href, children }: PropsWithChildren<{ href: string }>) {
   return (
@@ -180,7 +181,27 @@ const educationTimeline = [
   },
 ];
 
-export default function Home() {
+function logPageView() {
+  const headersList = headers();
+  const userAgent = headersList.get("User-Agent");
+  const referer = headersList.get("Referer");
+  const ua = headersList.get("Sec-Ch-Ua");
+  const platform = headersList.get("Sec-Ch-Ua-Platform");
+  const mobile = headersList.get("Sec-Ch-Ua-Mobile");
+  console.log(
+    `
+PageView:
+    userAgent: ${userAgent}
+    Referer: ${referer}
+    Sec-Ch-Ua: ${ua}
+    Sec-Ch-Ua-Platform: ${platform}
+    Sec-Ch-Ua-Mobile: ${mobile}
+    `,
+  );
+}
+
+export default async function Home() {
+  logPageView();
   return (
     <div className="grid items-center justify-items-center p-4 pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
