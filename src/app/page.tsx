@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -83,13 +83,20 @@ function SocialLinks({ className }: { className?: string }) {
   );
 }
 
+interface TimelineItem {
+  title: string | React.ReactNode;
+  subtitle: string | React.ReactNode;
+  time: string;
+  dot?: React.ReactNode;
+}
+
 function Experience({
   title,
   timelineItems,
   className,
 }: {
   title: string;
-  timelineItems: { title: string; subtitle: string; time: string }[];
+  timelineItems: TimelineItem[];
   className?: string;
 }) {
   return (
@@ -101,12 +108,15 @@ function Experience({
         <Timeline className={"gap-y-4 mr-auto"}>
           {timelineItems.map((timeline) => (
             <TimelineItem status="done" key={timeline.time}>
-              <TimelineHeading className={"sm:text-sm"}>
+              <TimelineHeading className={"sm:text-sm line-clamp-2"}>
                 {timeline.title}
               </TimelineHeading>
-              <TimelineDot className="size-3">
-                <CircleDot />
-              </TimelineDot>
+
+              {timeline.dot || (
+                <TimelineDot className="size-3">
+                  <CircleDot />
+                </TimelineDot>
+              )}
               <TimelineLine className={"py-1"} done />
               <TimelineContent className={"sm:text-sm flex flex-col"}>
                 <span className={"dark:text-zinc-300 text-zinc-700"}>
@@ -124,53 +134,53 @@ function Experience({
   );
 }
 
+const timeline = [
+  {
+    title: "Elevenlabs",
+    subtitle: "Software Engineer",
+    time: "Aug 2024 - Present",
+  },
+  {
+    title: "Root Signals",
+    subtitle: "Lead Software Engineer",
+    time: "Apr 2024 - Aug 2024",
+  },
+  {
+    title: "Mobal",
+    subtitle: "Head of Product and Technology",
+    time: "Jul 2021 - Aug 2023",
+  },
+  {
+    title: "RhombIT Consulting",
+    subtitle: "Software Engineer",
+    time: "Jun 2019 - Jul 2021",
+  },
+  {
+    title: "SmartValley Wearable Oy",
+    subtitle: "CTO",
+    time: "May 2017 - Aug 2020",
+  },
+  {
+    title: "jara.ai",
+    subtitle: "Co-founder",
+    time: "Oct 2018 - Aug 2019",
+  },
+];
+
+const educationTimeline = [
+  {
+    title: "Master of Science - Aalto University",
+    subtitle: "Machine Learning, Data Science, and Artificial Intelligence",
+    time: "Passed with Distinction",
+  },
+  {
+    title: "Bachelor of Science - Aalto University",
+    subtitle: "Computer Science",
+    time: "",
+  },
+];
+
 export default function Home() {
-  const timeline = [
-    {
-      title: "Elevenlabs",
-      subtitle: "Software Engineer",
-      time: "Aug 2024 - Present",
-    },
-    {
-      title: "Root Signals",
-      subtitle: "Lead Software Engineer",
-      time: "Apr 2024 - Aug 2024",
-    },
-    {
-      title: "Mobal",
-      subtitle: "Head of Product and Technology",
-      time: "Jul 2021 - Aug 2023",
-    },
-    {
-      title: "RhombIT Consulting",
-      subtitle: "Software Engineer",
-      time: "Jun 2019 - Jul 2021",
-    },
-    {
-      title: "SmartValley Wearable Oy",
-      subtitle: "CTO",
-      time: "May 2017 - Aug 2020",
-    },
-    {
-      title: "jara.ai",
-      subtitle: "Co-founder",
-      time: "Oct 2018 - Aug 2019",
-    },
-  ];
-
-  const educationTimeline = [
-    {
-      title: "Master of Science - Aalto University",
-      subtitle: "Machine Learning, Data Science and Artificial Intelligence",
-      time: "Passed with Distinction",
-    },
-    {
-      title: "Bachelor of Science - Aalto University",
-      subtitle: "Computer Science",
-      time: "",
-    },
-  ];
-
   return (
     <div className="grid items-center justify-items-center p-4 pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
