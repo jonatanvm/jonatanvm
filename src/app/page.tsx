@@ -85,11 +85,11 @@ function SocialLinks({ className }: { className?: string }) {
 
 function Experience({
   title,
-  timeline,
+  timelineItems,
   className,
 }: {
   title: string;
-  timeline: { title: string; subtitle: string; time: string }[];
+  timelineItems: { title: string; subtitle: string; time: string }[];
   className?: string;
 }) {
   return (
@@ -99,10 +99,10 @@ function Experience({
       </CardHeader>
       <CardContent>
         <Timeline className={"gap-y-4 mr-auto"}>
-          {timeline.map((job) => (
-            <TimelineItem status="done" key={job.time}>
+          {timelineItems.map((timeline) => (
+            <TimelineItem status="done" key={timeline.time}>
               <TimelineHeading className={"sm:text-sm"}>
-                {job.title}
+                {timeline.title}
               </TimelineHeading>
               <TimelineDot className="size-3">
                 <CircleDot />
@@ -110,10 +110,10 @@ function Experience({
               <TimelineLine className={"py-1"} done />
               <TimelineContent className={"sm:text-sm flex flex-col"}>
                 <span className={"dark:text-zinc-300 text-zinc-700"}>
-                  {job.subtitle}
+                  {timeline.subtitle}
                 </span>
                 <span className={"dark:text-zinc-500 text-zinc-900"}>
-                  {job.time}
+                  {timeline.time}
                 </span>
               </TimelineContent>
             </TimelineItem>
@@ -181,12 +181,12 @@ export default function Home() {
             <Experience
               title={"Experience"}
               className={"w-full"}
-              timeline={timeline}
+              timelineItems={timeline}
             />
             <Experience
               title={"Education"}
               className={"w-full"}
-              timeline={educationTimeline}
+              timelineItems={educationTimeline}
             />
           </div>
         </div>
