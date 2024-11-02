@@ -237,7 +237,7 @@ const projectsTimeline = [
       <div className={"flex items-center justify-center pt-3 gap-x-2"}>
         <Image
           className={"rounded-lg"}
-          src={"/x-to-voice-no-border.gif"}
+          src={"/x-to-voice.gif"}
           priority
           width={300}
           height={200}
