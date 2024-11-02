@@ -234,15 +234,22 @@ const projectsTimeline = [
       </span>
     ),
     subtitle: (
-      <div className={"flex items-center justify-center pt-3 gap-x-2"}>
-        <Image
-          className={"rounded-lg"}
-          src={"/x-to-voice.gif"}
-          priority
+      <div
+        className={
+          "flex items-center justify-center mt-3 rounded-lg overflow-hidden"
+        }
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           width={300}
           height={200}
-          alt={"X to Voice demo"}
-        />
+          aria-label={"X to Voice demo"}
+        >
+          <source src={"/x-to-voice-demo.mp4"} type={"video/mp4"}></source>
+        </video>
       </div>
     ),
     time: "",
