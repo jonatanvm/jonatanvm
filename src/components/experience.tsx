@@ -46,7 +46,7 @@ export function Experience({
                 </TimelineDot>
               )}
               <TimelineLine className={"py-1"} done />
-              <TimelineContent className={"sm:text-sm flex flex-col"}>
+              <TimelineContent className={"sm:text-sm flex flex-col w-full"}>
                 <span className={"dark:text-zinc-300 text-zinc-700"}>
                   {timeline.subtitle}
                 </span>

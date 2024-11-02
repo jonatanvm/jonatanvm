@@ -166,23 +166,24 @@ const projectsTimeline = [
       </span>
     ),
     subtitle: (
-      <div
-        className={
-          "flex items-center justify-center mt-3 rounded-lg overflow-hidden sm:h-[200px]"
-        }
-      >
-        <video
-          preload={"auto"}
-          autoPlay
-          loop
-          muted
-          playsInline
-          height={200}
-          aria-label={"X to Voice demo"}
+      <>
+        <div
+          className={
+            "flex items-center justify-center my-1 rounded-lg overflow-hidden border-4 darK:border-zinc-800 aspect-[1064/720]"
+          }
         >
-          <source src={"/x-to-voice-demo.mp4"} type={"video/mp4"}></source>
-        </video>
-      </div>
+          <video
+            preload={"auto"}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label={"X to Voice demo"}
+          >
+            <source src={"/x-to-voice-demo.mp4"} type={"video/mp4"}></source>
+          </video>
+        </div>
+      </>
     ),
     time: "",
   },
