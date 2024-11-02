@@ -236,16 +236,15 @@ const projectsTimeline = [
     subtitle: (
       <div
         className={
-          "flex items-center justify-center mt-3 w-[300px] h-[200px] rounded-lg overflow-hidden"
+          "flex items-center justify-center mt-3 rounded-lg overflow-hidden aspect-video"
         }
       >
         <video
+          preload={"auto"}
           autoPlay
           loop
           muted
           playsInline
-          width={300}
-          height={200}
           aria-label={"X to Voice demo"}
         >
           <source src={"/x-to-voice-demo.mp4"} type={"video/mp4"}></source>
