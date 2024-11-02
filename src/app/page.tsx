@@ -8,7 +8,7 @@ import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Image from "next/image";
-import { CircleDot, MailIcon } from "lucide-react";
+import { CircleDot, LinkIcon, MailIcon } from "lucide-react";
 import {
   Timeline,
   TimelineContent,
@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/timeline";
 import { headers } from "next/headers";
 import { Logtail } from "@logtail/node";
+import { YoutubeIcon } from "@/components/icons/youtube";
+import { ProductHuntIcon } from "@/components/icons/producthunt";
 
 function SocialLink({ href, children }: PropsWithChildren<{ href: string }>) {
   return (
@@ -182,6 +184,71 @@ const educationTimeline = [
   },
 ];
 
+const projectsTimeline = [
+  {
+    title: (
+      <span className={"flex items-center gap-1.5"}>
+        <Link
+          href={"https://www.xtovoice.com"}
+          rel={"noopener noreferrer"}
+          target={"_blank"}
+          className={"flex items-center hover:underline"}
+        >
+          X to Voice
+          <LinkIcon className={"w-3.5 h-3.5 ml-1"} />
+        </Link>
+        <Link
+          href={
+            "https://github.com/elevenlabs/elevenlabs-examples/tree/main/examples/text-to-voice/x-to-voice"
+          }
+          rel={"noopener noreferrer"}
+          target={"_blank"}
+          className={" hover:underline"}
+        >
+          <GithubIcon className={"w-4 h-4  dark:hover:text-gray-200"} />
+        </Link>
+        <Link
+          href={"https://www.youtube.com/watch?v=oQXnkvBLBAg"}
+          rel={"noopener noreferrer"}
+          target={"_blank"}
+          className={" hover:underline"}
+        >
+          <YoutubeIcon
+            className={
+              "w-5 h-5 white text-black dark:text-white dark:hover:text-gray-200"
+            }
+          />
+        </Link>
+        <Link
+          href={"https://www.producthunt.com/products/x-to-voice"}
+          rel={"noopener noreferrer"}
+          target={"_blank"}
+          className={" hover:underline"}
+        >
+          <ProductHuntIcon
+            className={
+              "w-4 h-4 white text-black dark:text-white dark:hover:text-gray-200"
+            }
+          />
+        </Link>
+      </span>
+    ),
+    subtitle: (
+      <div className={"flex items-center justify-center pt-3 gap-x-2"}>
+        <Image
+          className={"rounded-md"}
+          src={"/demo-gif.gif"}
+          priority
+          width={300}
+          height={200}
+          alt={"X to Voice demo"}
+        />
+      </div>
+    ),
+    time: "",
+  },
+];
+
 function logPageView() {
   if (process.env.NODE_ENV !== "production") {
     return;
@@ -211,6 +278,11 @@ export default async function Home() {
           <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto">
             <Me className={"w-full"} />
             <SocialLinks className={"w-full"} />
+            <Experience
+              title={"Projects"}
+              className={"w-full"}
+              timelineItems={projectsTimeline}
+            />
             <Experience
               title={"Experience"}
               className={"w-full"}
