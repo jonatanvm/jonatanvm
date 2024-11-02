@@ -169,7 +169,7 @@ const projectsTimeline = [
       <>
         <div
           className={
-            "flex items-center justify-center my-1 rounded-lg overflow-hidden border-4 darK:border-zinc-800 aspect-[1064/720]"
+            "flex items-center justify-center my-1 rounded-lg overflow-hidden border-4 dark:border-zinc-800 aspect-[1064/720]"
           }
         >
           <video
