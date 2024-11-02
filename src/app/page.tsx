@@ -236,7 +236,7 @@ const projectsTimeline = [
     subtitle: (
       <div
         className={
-          "flex items-center justify-center mt-3 rounded-lg overflow-hidden"
+          "flex items-center justify-center mt-3 w-[300px] h-[200px] rounded-lg overflow-hidden"
         }
       >
         <video
