@@ -1,36 +1,19 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Image from "next/image";
-import { CircleDot, LinkIcon, MailIcon } from "lucide-react";
-import {
-  Timeline,
-  TimelineContent,
-  TimelineDot,
-  TimelineHeading,
-  TimelineItem,
-  TimelineLine,
-} from "@/components/ui/timeline";
-import { headers } from "next/headers";
-import { Logtail } from "@logtail/node";
+import { LinkIcon, MailIcon } from "lucide-react";
+
 import { YoutubeIcon } from "@/components/icons/youtube";
 import { ProductHuntIcon } from "@/components/icons/producthunt";
-
-function SocialLink({ href, children }: PropsWithChildren<{ href: string }>) {
-  return (
-    <Link href={href} target={"_blank"} passHref>
-      <Button variant={"outline"} size={"lg"} className={"w-full"}>
-        {children}
-      </Button>
-    </Link>
-  );
-}
+import { Experience } from "@/components/experience";
+import { SocialLink } from "@/components/social-link";
+import { logPageView } from "@/components/utils";
 
 function Me({ className }: { className?: string }) {
   return (
@@ -84,57 +67,6 @@ function SocialLinks({ className }: { className?: string }) {
         </SocialLink>
       </li>
     </ul>
-  );
-}
-
-interface TimelineItem {
-  title: string | React.ReactNode;
-  subtitle: string | React.ReactNode;
-  time: string;
-  dot?: React.ReactNode;
-}
-
-function Experience({
-  title,
-  timelineItems,
-  className,
-}: {
-  title: string;
-  timelineItems: TimelineItem[];
-  className?: string;
-}) {
-  return (
-    <Card className={cn(className, "sm:max-w-sm mx-auto")}>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Timeline className={"gap-y-4 mr-auto"}>
-          {timelineItems.map((timeline) => (
-            <TimelineItem status="done" key={timeline.time}>
-              <TimelineHeading className={"sm:text-sm line-clamp-2"}>
-                {timeline.title}
-              </TimelineHeading>
-
-              {timeline.dot || (
-                <TimelineDot className="size-3">
-                  <CircleDot />
-                </TimelineDot>
-              )}
-              <TimelineLine className={"py-1"} done />
-              <TimelineContent className={"sm:text-sm flex flex-col"}>
-                <span className={"dark:text-zinc-300 text-zinc-700"}>
-                  {timeline.subtitle}
-                </span>
-                <span className={"dark:text-zinc-500 text-zinc-900"}>
-                  {timeline.time}
-                </span>
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </CardContent>
-    </Card>
   );
 }
 
@@ -255,26 +187,6 @@ const projectsTimeline = [
     time: "",
   },
 ];
-
-function logPageView() {
-  if (process.env.NODE_ENV !== "production") {
-    return;
-  }
-  const logtail = new Logtail("sW8m24A6ZV9t9t4H3LetgYE9");
-  const headersList = headers();
-  const userAgent = headersList.get("User-Agent");
-  const referer = headersList.get("Referer");
-  const ua = headersList.get("Sec-Ch-Ua");
-  const platform = headersList.get("Sec-Ch-Ua-Platform");
-  const mobile = headersList.get("Sec-Ch-Ua-Mobile");
-  logtail.info("PageView", {
-    "User-Agent": userAgent,
-    Referer: referer,
-    "Sec-Ch-Ua": ua,
-    "Sec-Ch-Ua-Platform": platform,
-    "Sec-Ch-Ua-Mobile": mobile,
-  });
-}
 
 export default async function Home() {
   logPageView();
