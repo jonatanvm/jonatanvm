@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "jonatanvm",
+  title: "Jonatan von Martens",
   description: "",
 };
 
