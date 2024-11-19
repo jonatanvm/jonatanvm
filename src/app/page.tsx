@@ -72,7 +72,11 @@ function SocialLinks({ className }: { className?: string }) {
 
 const timeline = [
   {
-    title: "Elevenlabs",
+    title: (
+      <a href={"https://elevenlabs.io/text-to-speech"} target={"_blank"}>
+        Elevenlabs
+      </a>
+    ),
     subtitle: "Software Engineer",
     time: "Aug 2024 - Present",
   },
