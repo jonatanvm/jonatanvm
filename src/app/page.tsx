@@ -125,6 +125,41 @@ const projectsTimeline = [
     title: (
       <span className={"flex items-center gap-1.5"}>
         <Link
+          href={"https://www.aiengineerpack.com"}
+          rel={"noopener noreferrer"}
+          target={"_blank"}
+          className={"flex items-center hover:underline"}
+        >
+          AI Engineer Pack
+          <LinkIcon className={"w-3.5 h-3.5 ml-1"} />
+        </Link>
+      </span>
+    ),
+    subtitle: (
+      <>
+        <div className={'mt-1'}>
+          Built a website for ElevenLabs, where AI Engineers can redeem discount codes to top AI tools.
+        </div>
+        <div
+          className={
+            "flex items-center justify-center my-1 rounded-lg overflow-hidden border-4 dark:border-zinc-800 aspect-[1064/720]"
+          }
+        >
+          <Image
+              width={400}
+              height={300}
+              src={'/aiengineerpack.png'}
+              alt={'AI Engineer Pack screenshot'}
+          />
+        </div>
+      </>
+    ),
+      time: "",
+  },
+    {
+        title: (
+      <span className={"flex items-center gap-1.5"}>
+        <Link
           href={"https://www.xtovoice.com"}
           rel={"noopener noreferrer"}
           target={"_blank"}
