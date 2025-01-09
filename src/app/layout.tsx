@@ -18,6 +18,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Jonatan von Martens",
   description: "",
+  alternates: {
+    canonical: "https://jonatanvm.com",
+  },
 };
 
 export const viewport: Viewport = {
