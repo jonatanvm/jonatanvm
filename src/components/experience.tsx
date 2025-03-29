@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/timeline";
 
 export interface TimelineItem {
-  title: string | React.ReactNode;
+  title?: string | React.ReactNode;
   subtitle: string | React.ReactNode;
   time: string;
-  dot?: React.ReactNode;
+  dot?: React.ReactNode | null;
 }
 
 export function Experience({
@@ -39,7 +39,6 @@ export function Experience({
               <TimelineHeading className={"sm:text-sm line-clamp-2"}>
                 {timeline.title}
               </TimelineHeading>
-
               {timeline.dot || (
                 <TimelineDot className="size-3">
                   <CircleDot />

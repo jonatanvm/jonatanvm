@@ -11,7 +11,7 @@ import { LinkIcon, MailIcon } from "lucide-react";
 
 import { YoutubeIcon } from "@/components/icons/youtube";
 import { ProductHuntIcon } from "@/components/icons/producthunt";
-import { Experience } from "@/components/experience";
+import { Experience, TimelineItem } from "@/components/experience";
 import { SocialLink } from "@/components/social-link";
 import { logPageView } from "@/components/utils";
 
@@ -70,7 +70,25 @@ function SocialLinks({ className }: { className?: string }) {
   );
 }
 
-const timeline = [
+const timeline: TimelineItem[] = [
+  {
+    title: (
+      <a href={"https://elevenlabs.io/text-to-speech"} target={"_blank"}>
+        Elevenlabs
+      </a>
+    ),
+    subtitle: "AI Safety Engineering",
+    time: "Feb 2025 - Present",
+  },
+  {
+    title: (
+      <a href={"https://elevenlabs.io/text-to-speech"} target={"_blank"}>
+        Elevenlabs
+      </a>
+    ),
+    subtitle: "Growth",
+    time: "Oct 2024 - Feb 2025",
+  },
   {
     title: (
       <a href={"https://elevenlabs.io/text-to-speech"} target={"_blank"}>
@@ -78,7 +96,7 @@ const timeline = [
       </a>
     ),
     subtitle: "Software Engineer",
-    time: "Aug 2024 - Present",
+    time: "Aug 2024 - Oct 2024",
   },
   {
     title: "Root Signals",
@@ -107,7 +125,7 @@ const timeline = [
   },
 ];
 
-const educationTimeline = [
+const educationTimeline: TimelineItem[] = [
   {
     title: "Master of Science - Aalto University",
     subtitle: "Machine Learning, Data Science, and Artificial Intelligence",
@@ -120,7 +138,7 @@ const educationTimeline = [
   },
 ];
 
-const projectsTimeline = [
+const projectsTimeline: TimelineItem[] = [
   {
     title: (
       <span className={"flex items-center gap-1.5"}>
@@ -137,8 +155,9 @@ const projectsTimeline = [
     ),
     subtitle: (
       <>
-        <div className={'mt-1'}>
-          Built a website for ElevenLabs, where AI Engineers can redeem discount codes to top AI tools.
+        <div className={"mt-1"}>
+          Built a website for ElevenLabs, where AI Engineers can redeem discount
+          codes to top AI tools.
         </div>
         <div
           className={
@@ -146,18 +165,18 @@ const projectsTimeline = [
           }
         >
           <Image
-              width={400}
-              height={300}
-              src={'/aiengineerpack.png'}
-              alt={'AI Engineer Pack screenshot'}
+            width={400}
+            height={300}
+            src={"/aiengineerpack.png"}
+            alt={"AI Engineer Pack screenshot"}
           />
         </div>
       </>
     ),
-      time: "",
+    time: "",
   },
-    {
-        title: (
+  {
+    title: (
       <span className={"flex items-center gap-1.5"}>
         <Link
           href={"https://www.xtovoice.com"}
