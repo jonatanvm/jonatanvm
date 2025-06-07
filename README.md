@@ -11,6 +11,7 @@ You can find more about me on:
 
 ### Projects
 
+- [chat](https://chat.j16.io) - WIP AI chat app, with access to all models
 - [notes](https://notes.j16.io) - A very simple notes app that I use daily.
 - [finance](https://finance.j16.io) - An app to easily read SEC filings.
 - [auth](https://auth.j16.io) - Custom cross domain auth for all my apps.
