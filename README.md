@@ -18,5 +18,5 @@ You can find more about me on:
 - [inbox](https://inbox.j16.io) - AI assisted Gmail wrapper. _Legacy project – no active development._
 
 Other:
-- [aiengineerpack](https://www.aiengineerpack.com/) - Gives developers free access to top AI tools
-- [xtovoice](https://xtovoice.elevenlabs.io/) - Transforms your Twitter (X) profile into a talking avatar ([Github](https://github.com/elevenlabs/elevenlabs-examples/tree/main/examples/text-to-voice/x-to-voice))
+- [aiengineerpack](https://www.aiengineerpack.com/) - Gives developers free access to top AI tools (80k+ registered users)
+- [xtovoice](https://xtovoice.elevenlabs.io/) - Transforms your Twitter (X) profile into a talking avatar ([Github](https://github.com/elevenlabs/elevenlabs-examples/tree/main/examples/text-to-voice/x-to-voice)) (350k+ unique visitors)
