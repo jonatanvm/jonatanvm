@@ -19,5 +19,5 @@ You can find more about me on:
 
 Other:
 - [aiengineerpack](https://www.aiengineerpack.com/) - Gives developers free access to top AI tools (80k+ registered users)
-  - _Forked into [AI Creator Pack](https://www.aicreatorpack.com/), which gives people free access to creator focused tools._
+  - _Forked into [AI Creator Pack](https://www.aicreatorpack.com/), which gives people free access to creator focused tools (22k+ registered users)._
 - [xtovoice](https://xtovoice.elevenlabs.io/) - Transforms your Twitter (X) profile into a talking avatar ([Github](https://github.com/elevenlabs/elevenlabs-examples/tree/main/examples/text-to-voice/x-to-voice)) (350k+ unique visitors)
