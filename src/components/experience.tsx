@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { CircleDot, ExternalLinkIcon } from "lucide-react";
+import { CircleDot } from "lucide-react";
 import React from "react";
 import {
   Timeline,
@@ -10,7 +10,6 @@ import {
   TimelineItem,
   TimelineLine,
 } from "@/components/ui/timeline";
-import Link from "next/link";
 
 export interface TimelineItem {
   title?: string | React.ReactNode;
@@ -23,10 +22,12 @@ export function Experience({
   title,
   timelineItems,
   className,
+  footer,
 }: {
   title: string;
   timelineItems: TimelineItem[];
   className?: string;
+  footer?: React.ReactNode;
 }) {
   return (
     <Card className={cn(className, "sm:max-w-sm mx-auto")}>
@@ -57,18 +58,7 @@ export function Experience({
             </TimelineItem>
           ))}
         </Timeline>
-        <div className={"mt-4"}>
-          <Link
-            href={"https://www.j16.io"}
-            target={"_blank"}
-            className={
-              "flex items-center text-sm underline underline-offset-2 justify-center"
-            }
-          >
-            All personal projects available at j16.io{" "}
-            <ExternalLinkIcon className={"ml-1 w-3 h-3"} />
-          </Link>
-        </div>
+        {footer}
       </CardContent>
     </Card>
   );

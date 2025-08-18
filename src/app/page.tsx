@@ -7,7 +7,7 @@ import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Image from "next/image";
-import { LinkIcon, MailIcon } from "lucide-react";
+import { ExternalLinkIcon, LinkIcon, MailIcon } from "lucide-react";
 
 import { YoutubeIcon } from "@/components/icons/youtube";
 import { ProductHuntIcon } from "@/components/icons/producthunt";
@@ -260,6 +260,20 @@ export default async function Home() {
               title={"Projects"}
               className={"w-full"}
               timelineItems={projectsTimeline}
+              footer={
+                <div className={"mt-4"}>
+                  <Link
+                    href={"https://www.j16.io"}
+                    target={"_blank"}
+                    className={
+                      "flex items-center text-sm underline underline-offset-2 justify-center"
+                    }
+                  >
+                    All personal projects available at j16.io{" "}
+                    <ExternalLinkIcon className={"ml-1 w-3 h-3"} />
+                  </Link>
+                </div>
+              }
             />
             <Experience
               title={"Experience"}
