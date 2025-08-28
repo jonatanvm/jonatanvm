@@ -125,6 +125,27 @@ const timeline: TimelineItem[] = [
   },
 ];
 
+const speakingTimeline: TimelineItem[] = [
+  {
+    title: (
+      <a href={"https://luma.com/jlkzijld?tk=JuEHd1"} target={"_blank"}>
+        AI / LLM Developer Event
+      </a>
+    ),
+    subtitle: "Symposium AI x Datacrunch",
+    time: "August 27 2025",
+  },
+  {
+    title: (
+      <a href={"https://luma.com/nc900eb2"} target={"_blank"}>
+        Audio Engineering & LLMs
+      </a>
+    ),
+    subtitle: "Tandem Health",
+    time: "May 22 2025",
+  },
+];
+
 const educationTimeline: TimelineItem[] = [
   {
     title: "Master of Science - Aalto University",
@@ -279,6 +300,11 @@ export default async function Home() {
               title={"Experience"}
               className={"w-full"}
               timelineItems={timeline}
+            />
+            <Experience
+              title={"Speaking"}
+              className={"w-full"}
+              timelineItems={speakingTimeline}
             />
             <Experience
               title={"Education"}
