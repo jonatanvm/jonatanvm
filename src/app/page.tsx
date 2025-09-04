@@ -7,12 +7,7 @@ import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Image from "next/image";
-import {
-  ExternalLinkIcon,
-  FolderCodeIcon,
-  LinkIcon,
-  MailIcon,
-} from "lucide-react";
+import { FolderCodeIcon, LinkIcon, MailIcon } from "lucide-react";
 
 import { YoutubeIcon } from "@/components/icons/youtube";
 import { ProductHuntIcon } from "@/components/icons/producthunt";
@@ -279,6 +274,27 @@ const projectsTimeline: TimelineItem[] = [
     ),
     time: "",
   },
+  {
+    title: (
+      <span className={"flex items-center gap-1.5"}>
+        <Link
+          href={"https://www.j16.io"}
+          rel={"noopener noreferrer"}
+          target={"_blank"}
+          className={"flex items-center hover:underline"}
+        >
+          J16.io
+          <LinkIcon className={"w-3.5 h-3.5 ml-1"} />
+        </Link>
+      </span>
+    ),
+    subtitle: (
+      <>
+        <div className={"mt-1"}>All my personal projects live here.</div>
+      </>
+    ),
+    time: "",
+  },
 ];
 
 export default async function Home() {
@@ -294,20 +310,6 @@ export default async function Home() {
               title={"Projects"}
               className={"w-full"}
               timelineItems={projectsTimeline}
-              footer={
-                <div className={"mt-4"}>
-                  <Link
-                    href={"https://www.j16.io"}
-                    target={"_blank"}
-                    className={
-                      "flex items-center text-sm underline underline-offset-2 justify-center"
-                    }
-                  >
-                    All personal projects available at j16.io{" "}
-                    <ExternalLinkIcon className={"ml-1 w-3 h-3"} />
-                  </Link>
-                </div>
-              }
             />
             <Experience
               title={"Experience"}
