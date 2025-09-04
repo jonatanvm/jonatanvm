@@ -7,7 +7,12 @@ import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
 import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Image from "next/image";
-import { ExternalLinkIcon, LinkIcon, MailIcon } from "lucide-react";
+import {
+  ExternalLinkIcon,
+  FolderCodeIcon,
+  LinkIcon,
+  MailIcon,
+} from "lucide-react";
 
 import { YoutubeIcon } from "@/components/icons/youtube";
 import { ProductHuntIcon } from "@/components/icons/producthunt";
@@ -45,7 +50,7 @@ function Me({ className }: { className?: string }) {
 
 function SocialLinks({ className }: { className?: string }) {
   return (
-    <ul className={cn("grid grid-cols-4 sm:grid-cols-4 gap-3", className)}>
+    <ul className={cn("grid grid-cols-5 gap-3", className)}>
       <li className={"w-full"}>
         <SocialLink href={"https://www.linkedin.com/in/jonatanvm/"}>
           <LinkedInIcon className="h-5 w-5 shrink-0" aria-label="LinkedIn" />
@@ -63,7 +68,15 @@ function SocialLinks({ className }: { className?: string }) {
       </li>
       <li>
         <SocialLink href={"mailto:Jonatan <stepped_jays.0m@icloud.com>"}>
-          <MailIcon className="h-5 w-5 shrink-0" aria-label={"X.com"} />
+          <MailIcon className="h-5 w-5 shrink-0" aria-label={"E-mail"} />
+        </SocialLink>
+      </li>
+      <li>
+        <SocialLink href={"https://www.j16.io"}>
+          <FolderCodeIcon
+            className="h-5 w-5 shrink-0"
+            aria-label={"Personal projects"}
+          />
         </SocialLink>
       </li>
     </ul>
