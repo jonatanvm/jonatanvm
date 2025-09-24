@@ -1,21 +1,21 @@
 import Link from "next/link";
 import React from "react";
-import { cn } from "@/lib/utils";
-import { ModeToggle } from "@/components/mode-toggle";
-import { Card, CardContent } from "@/components/ui/card";
-import { LinkedInIcon } from "@/components/icons/linkedIn-icon";
-import { GithubIcon } from "@/components/icons/github-icon";
-import { TwitterIcon } from "@/components/icons/twitter-icon";
+import {cn} from "@/lib/utils";
+import {ModeToggle} from "@/components/mode-toggle";
+import {Card, CardContent} from "@/components/ui/card";
+import {LinkedInIcon} from "@/components/icons/linkedIn-icon";
+import {GithubIcon} from "@/components/icons/github-icon";
+import {TwitterIcon} from "@/components/icons/twitter-icon";
 import Image from "next/image";
-import { FolderCodeIcon, LinkIcon, MailIcon } from "lucide-react";
+import {FolderCodeIcon, LinkIcon, MailIcon} from "lucide-react";
 
-import { YoutubeIcon } from "@/components/icons/youtube";
-import { ProductHuntIcon } from "@/components/icons/producthunt";
-import { Experience, TimelineItem } from "@/components/experience";
-import { SocialLink } from "@/components/social-link";
-import { logPageView } from "@/components/utils";
+import {YoutubeIcon} from "@/components/icons/youtube";
+import {ProductHuntIcon} from "@/components/icons/producthunt";
+import {Experience, TimelineItem} from "@/components/experience";
+import {SocialLink} from "@/components/social-link";
+import {logPageView} from "@/components/utils";
 
-function Me({ className }: { className?: string }) {
+function Me({className}: { className?: string }) {
   return (
     <Card className={cn(className)}>
       <CardContent className="p-0 cursor-auto">
@@ -35,7 +35,7 @@ function Me({ className }: { className?: string }) {
             <p className="truncate sm:text-sm">@jonatanvm</p>
           </div>
           <div>
-            <ModeToggle />
+            <ModeToggle/>
           </div>
         </div>
       </CardContent>
@@ -43,27 +43,27 @@ function Me({ className }: { className?: string }) {
   );
 }
 
-function SocialLinks({ className }: { className?: string }) {
+function SocialLinks({className}: { className?: string }) {
   return (
     <ul className={cn("grid grid-cols-5 gap-3", className)}>
       <li className={"w-full"}>
         <SocialLink href={"https://www.linkedin.com/in/jonatanvm/"}>
-          <LinkedInIcon className="h-5 w-5 shrink-0" aria-label="LinkedIn" />
+          <LinkedInIcon className="h-5 w-5 shrink-0" aria-label="LinkedIn"/>
         </SocialLink>
       </li>
       <li>
         <SocialLink href={"https://github.com/jonatanvm"}>
-          <GithubIcon className="h-5 w-5 shrink-0" aria-label={"Github"} />
+          <GithubIcon className="h-5 w-5 shrink-0" aria-label={"Github"}/>
         </SocialLink>
       </li>
       <li>
         <SocialLink href={"https://x.com/jonatanvmartens"}>
-          <TwitterIcon className="h-5 w-5 shrink-0" aria-label={"X.com"} />
+          <TwitterIcon className="h-5 w-5 shrink-0" aria-label={"X.com"}/>
         </SocialLink>
       </li>
       <li>
         <SocialLink href={"mailto:Jonatan <stepped_jays.0m@icloud.com>"}>
-          <MailIcon className="h-5 w-5 shrink-0" aria-label={"E-mail"} />
+          <MailIcon className="h-5 w-5 shrink-0" aria-label={"E-mail"}/>
         </SocialLink>
       </li>
       <li>
@@ -154,6 +154,19 @@ const speakingTimeline: TimelineItem[] = [
   },
 ];
 
+const pressTimeline: TimelineItem[] = [
+  {
+    title: (
+      <a className={'flex items-center'} href={"https://www.exceptionalcap.com/exceptional100_2025"} target={"_blank"}>
+        Exceptional 100 2025 <LinkIcon className={"w-3 h-3 ml-1"}/>
+
+      </a>
+    ),
+    subtitle: "Exceptional Capital’s annual list of the top 100 engineers, researchers, and designers shaping hyper-growth companies.",
+    time: "",
+  },
+];
+
 const educationTimeline: TimelineItem[] = [
   {
     title: "Master of Science - Aalto University",
@@ -178,7 +191,7 @@ const projectsTimeline: TimelineItem[] = [
           className={"flex items-center hover:underline"}
         >
           AI Engineer Pack
-          <LinkIcon className={"w-3.5 h-3.5 ml-1"} />
+          <LinkIcon className={"w-3 h-3 ml-1"}/>
         </Link>
       </span>
     ),
@@ -214,7 +227,7 @@ const projectsTimeline: TimelineItem[] = [
           className={"flex items-center hover:underline"}
         >
           X to Voice
-          <LinkIcon className={"w-3.5 h-3.5 ml-1"} />
+          <LinkIcon className={"w-3 h-3 ml-1"}/>
         </Link>
         <Link
           href={
@@ -224,7 +237,7 @@ const projectsTimeline: TimelineItem[] = [
           target={"_blank"}
           className={" hover:underline"}
         >
-          <GithubIcon className={"w-4 h-4  dark:hover:text-gray-200"} />
+          <GithubIcon className={"w-4 h-4  dark:hover:text-gray-200"}/>
         </Link>
         <Link
           href={"https://www.youtube.com/watch?v=oQXnkvBLBAg"}
@@ -284,7 +297,7 @@ const projectsTimeline: TimelineItem[] = [
           className={"flex items-center hover:underline"}
         >
           J16.io
-          <LinkIcon className={"w-3.5 h-3.5 ml-1"} />
+          <LinkIcon className={"w-3 h-3 ml-1"}/>
         </Link>
       </span>
     ),
@@ -304,8 +317,8 @@ export default async function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
         <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 w-full">
           <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto">
-            <Me className={"w-full"} />
-            <SocialLinks className={"w-full"} />
+            <Me className={"w-full"}/>
+            <SocialLinks className={"w-full"}/>
             <Experience
               title={"Projects"}
               className={"w-full"}
@@ -322,6 +335,11 @@ export default async function Home() {
               timelineItems={speakingTimeline}
             />
             <Experience
+              title={"Press"}
+              className={"w-full"}
+              timelineItems={pressTimeline}
+            />
+            <Experience
               title={"Education"}
               className={"w-full"}
               timelineItems={educationTimeline}
@@ -329,7 +347,8 @@ export default async function Home() {
           </div>
         </div>
       </main>
-      <footer className="row-start-3 gap-6 flex-wrap items-center justify-center text-zinc-300 dark:text-zinc-800 hidden">
+      <footer
+        className="row-start-3 gap-6 flex-wrap items-center justify-center text-zinc-300 dark:text-zinc-800 hidden">
         © jonatanvm.com
       </footer>
     </div>
