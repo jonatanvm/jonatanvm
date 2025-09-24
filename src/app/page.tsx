@@ -158,8 +158,7 @@ const pressTimeline: TimelineItem[] = [
   {
     title: (
       <a className={'flex items-center'} href={"https://www.exceptionalcap.com/exceptional100_2025"} target={"_blank"}>
-        Exceptional 100 2025 <LinkIcon className={"w-3 h-3 ml-1"}/>
-
+        Exceptional 100 - 2025 <LinkIcon className={"w-3 h-3 ml-1"}/>
       </a>
     ),
     subtitle: "Exceptional Capital’s annual list of the top 100 engineers, researchers, and designers shaping hyper-growth companies.",
