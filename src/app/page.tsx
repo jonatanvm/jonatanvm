@@ -341,24 +341,14 @@ export default async function Home() {
   return (
     <div className="grid items-center justify-items-center p-4 pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 w-full">
-          <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto sm:ml-auto sm:mr-0">
             <Me className={"w-full"} />
             <SocialLinks className={"w-full"} />
             <Experience
               title={"Projects"}
               className={"w-full"}
               timelineItems={projectsTimeline}
-            />
-            <Experience
-              title={"Experience"}
-              className={"w-full"}
-              timelineItems={timeline}
-            />
-            <Experience
-              title={"Speaking"}
-              className={"w-full"}
-              timelineItems={speakingTimeline}
             />
             <Experience
               title={"Press"}
@@ -369,6 +359,18 @@ export default async function Home() {
               title={"Education"}
               className={"w-full"}
               timelineItems={educationTimeline}
+            />
+          </div>
+          <div className="flex flex-col gap-4 w-full sm:max-w-sm mx-auto sm:mr-auto sm:ml-0">
+            <Experience
+              title={"Experience"}
+              className={"w-full"}
+              timelineItems={timeline}
+            />
+            <Experience
+              title={"Speaking"}
+              className={"w-full"}
+              timelineItems={speakingTimeline}
             />
           </div>
         </div>
