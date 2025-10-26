@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### Hello 👋  
 
-## Getting Started
+I'm Jonatan and I'm currently leading AI Safety Engineering at [ElevenLabs](https://elevenlabs.io/), one of the fastest growing startups in the world. 
 
-First, run the development server:
+You can find more about me on:  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [jonatan.ai](https://jonatan.ai)
+- [LinkedIn](https://www.linkedin.com)  
+- [GitHub](https://github.com)  
+- [Twitter](https://x.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Projects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [chat](https://chat.j16.io) - WIP AI chat app, with access to all models
+- [notes](https://notes.j16.io) - A very simple notes app that I use daily.
+- [finance](https://finance.j16.io) - An app to easily read SEC filings.
+- [auth](https://auth.j16.io) - Custom cross domain auth for all my apps.
+- [inbox](https://inbox.j16.io) - AI assisted Gmail wrapper. _Legacy project – no active development._
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Other:
+- [aiengineerpack](https://www.aiengineerpack.com/) - Gives developers free access to top AI tools (80k+ registered users)
+  - Forked into [aicreatorpack](https://www.aicreatorpack.com/), which gives free access to creator focused tools (22k+ registered users).
+- [xtovoice](https://xtovoice.elevenlabs.io/) - Transforms your Twitter (X) profile into a talking avatar ([Github](https://github.com/elevenlabs/elevenlabs-examples/tree/main/examples/text-to-voice/x-to-voice)) (350k+ unique visitors)
